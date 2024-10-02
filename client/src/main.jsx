@@ -8,6 +8,7 @@ import './index.css'
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import ErrorPage from './components/ErrorPage.jsx'
 import MyApplications from './components/MyApplications.jsx'
+import MyStudents from './components/MyStudents.jsx'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path:"/applications",
         element: <MyApplications/>
+      },
+      {
+        path:"/students",
+        element: <MyStudents/>
       }
     ]
   }

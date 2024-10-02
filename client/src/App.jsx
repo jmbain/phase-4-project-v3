@@ -11,6 +11,7 @@ import { Outlet } from 'react-router-dom'
 function App() {
   const [count, setCount] = useState(0)
   const [applications, setApplications] = useState([])
+  const [students, setStudents] = useState([])
 
   useEffect(() => {
     fetch("/api/applications", {
@@ -19,13 +20,21 @@ function App() {
     .then(applData => setApplications(applData))
   },[])
 
+  useEffect(() => {
+    fetch("/api/students", {
+      mode: 'no-cors'})
+    .then(r => r.json())
+    .then(studData => setStudents(studData))
+  },[])
+
   return (
     <>
       <div>
         <Header/>
         <NavBar/>
         <Outlet context={{
-          applications: applications
+          applications: applications,
+          students: students
         }}/>
       </div>
       <div>
