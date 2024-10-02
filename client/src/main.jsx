@@ -7,12 +7,19 @@ import './index.css'
 //JB Added
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import ErrorPage from './components/ErrorPage.jsx'
+import MyApplications from './components/MyApplications.jsx'
 
 const router = createBrowserRouter([
   {
     path:'/',
     element: <App />,
-    errorElement: <ErrorPage/>
+    errorElement: <ErrorPage/>,
+    children: [
+      {
+        path:"/applications",
+        element: <MyApplications/>
+      }
+    ]
   }
 ])
 
