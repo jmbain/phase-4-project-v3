@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -10,13 +10,22 @@ import { Outlet } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [applications, setApplications] = useState([])
+
+  useEffect(() => {
+    fetch("/api/applications")
+    .then(r => r.json())
+    .then(applData => setApplications(applData))
+  },[])
 
   return (
     <>
       <div>
         <Header/>
         <NavBar/>
-        <Outlet />
+        <Outlet context={{
+          applications: applications
+        }}/>
       </div>
       <div>
         <a href="https://vitejs.dev" target="_blank">

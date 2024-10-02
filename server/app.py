@@ -14,17 +14,18 @@ from models import db, Application, Student, School, User, ApplicationException,
 # initialize flask app, connect database uri
 app = Flask(__name__)
 
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
 
 #from Ben Pets example...
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URI']
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URI']
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 #from lab...
-# DATABASE = os.environ.get(
-#     "DB_URI", f"sqlite:///{os.path.join(BASE_DIR, 'app.db')}")
-# app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+DATABASE = os.environ.get(
+    "DB_URI", f"sqlite:///{os.path.join(BASE_DIR, 'app.db')}")
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # initialize sqlalchemy plugin with flask
 db.init_app(app)
@@ -32,6 +33,10 @@ db.init_app(app)
 Migrate(app, db)
 
 # define flask views (will connect to react routes)
+
+@app.route('/')
+def index():
+    return {"welcome":"welcome!"}
 
 @app.route('/api/schools', methods=["GET"])
 def all_schools():
@@ -187,5 +192,5 @@ def check_session():
     # return success code 
     return user.to_dict(), 200
 
-# if __name__ == '__main__':
-#     app.run(port=4242, debug=True)
+if __name__ == '__main__':
+    app.run(port=4242, debug=True)

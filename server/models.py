@@ -45,7 +45,7 @@ class Student(db.Model, SerializerMixin):
     applications = db.relationship('Application', back_populates='student')
 
     # serialization rules
-    serialize_rules = ('-user.students', '-applications.student') # -owner_id is optiona
+    serialize_rules = ('-user', '-applications') # -owner_id is optiona
     # serialize_only = ['name']
 
 # this is fine to keep for now, student age should not be less than 0...
@@ -72,7 +72,7 @@ class School(db.Model, SerializerMixin):
     applications = db.relationship('Application', back_populates="school")
     # user = db.relationship('User', back_populates="school")
     #TBD if serialize rules required for this...
-    serialize_rules = ['-applications.school'] 
+    serialize_rules = ['-applications'] 
 
 
 class Application(db.Model, SerializerMixin):
@@ -112,7 +112,7 @@ class User(db.Model, SerializerMixin):
     applications = db.relationship('Application', back_populates="user")
     # school = db.relationship('School', back_populates='user')
 
-    serialize_rules = ['-password_hash', '-applications.user', '-student.user']
+    serialize_rules = ['-password_hash', '-applications', '-students']
 
     def __repr__(self) -> str:
         return f'<User {self.id} {self.username}>'
