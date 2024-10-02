@@ -29,9 +29,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # initialize sqlalchemy plugin with flask
 db.init_app(app)
-# initialize Alembic (aka flask migrate)
+# initialize Alembic (aka flask migrate) and CORS
 Migrate(app, db)
-
+CORS(app)
 # define flask views (will connect to react routes)
 
 @app.route('/')

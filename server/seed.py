@@ -55,10 +55,10 @@ def run():
         Application(student_id=3, school_id=3, user_id=2, user_signature="Test 5"),
         Application(student_id=4, school_id=4, user_id=3, user_signature="Test 6"),
         Application(student_id=5, school_id=5, user_id=4, user_signature="Test 7"),
-        Application(student_id=6, school_id=6, user_id=4, user_signature="Test 8"),
+        Application(student_id=6, school_id=3, user_id=4, user_signature="Test 8"),
         Application(student_id=4, school_id=4, user_id=3, user_signature="Test 9"),
         Application(student_id=4, school_id=5, user_id=3, user_signature="Test 10"),
-        Application(student_id=4, school_id=6, user_id=3, user_signature="Test 11")
+        Application(student_id=4, school_id=5, user_id=3, user_signature="Test 11")
     ]
 
     db.session.add_all(applications)

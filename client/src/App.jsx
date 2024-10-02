@@ -13,7 +13,8 @@ function App() {
   const [applications, setApplications] = useState([])
 
   useEffect(() => {
-    fetch("/api/applications")
+    fetch("/api/applications", {
+      mode: 'no-cors'})
     .then(r => r.json())
     .then(applData => setApplications(applData))
   },[])
