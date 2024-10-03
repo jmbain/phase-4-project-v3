@@ -10,6 +10,7 @@ import ErrorPage from './components/ErrorPage.jsx'
 import MyApplications from './components/MyApplications.jsx'
 import MyStudents from './components/MyStudents.jsx'
 import MyHome from './components/MyHome.jsx'
+import ApplicationProfile from './components/ApplicationProfile.jsx'
 
 const router = createBrowserRouter([
   {
@@ -29,10 +30,10 @@ const router = createBrowserRouter([
         path:"/students",
         element: <MyStudents/>
       },
-      // {
-      //   path:"/application/:id",
-      //   element: <ApplicationProfile/>
-      // },
+      {
+        path:"/applications/:id",
+        element: <ApplicationProfile/>
+      },
       // {
       //   path:"/students/:id",
       //   element: <StudentProfile/>
