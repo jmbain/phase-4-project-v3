@@ -24,7 +24,7 @@ function SchoolProfile() {
                 <div className="schoolDataContainer">
                     <h3>School Name: {school.school_name}</h3>
                     <h5>School Gov ID: {school.gov_id}</h5>
-                    <h5>School City: {school.city}</h5>
+                    <h5>School City: {school.school_city}</h5>
                 </div>
             </div>
         )

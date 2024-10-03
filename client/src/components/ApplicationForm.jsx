@@ -38,7 +38,7 @@ function ApplicationForm() {
 
     return (
         <div className="addNewApplContainer">
-            <h1 className="formheader">Submit an application!</h1>
+            <h2 className="formheader">Submit an application!</h2>
             <form className="newApplication" onSubmit={handleSubmit} >
                 <input onChange={updateApplication} value={formData.student} className="forminput" type="text" name="student" placeholder="Student"/>
                 <input onChange={updateApplication} value={formData.school} className="forminput" type="text" name="school" placeholder="School"/>

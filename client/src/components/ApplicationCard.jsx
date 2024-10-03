@@ -7,7 +7,7 @@ function ApplicationCard({application}) {
 
     // }
     return (
-        <li className="applicationCard">
+        <li className="card">
             <Link to={`/applications/${application.id}`} replace> {application.student.first_name} {application.student.last_name} applied to {application.school.school_name} </Link>
         </li>
     )

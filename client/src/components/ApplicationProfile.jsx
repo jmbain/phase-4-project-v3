@@ -24,7 +24,7 @@ function ApplicationProfile() {
             <div className="schoolDataContainer">
                 <h3>School Name: {application.school.school_name}</h3>
                 <h5>School Gov ID: {application.school.gov_id}</h5>
-                <h5>School City: {application.school.city}</h5>
+                <h5>School City: {application.school.school_city}</h5>
             </div>
             <div className="studentDataContainer">
                 <h3>Student Name:{application.student.first_name} {application.student.last_name}</h3>

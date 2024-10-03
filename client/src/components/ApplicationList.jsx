@@ -15,8 +15,8 @@ function ApplicationList() {
     
     return (
         <div>
-            <h3>Applications List!</h3>
-             <ol className="application-list">{applicationComponents}</ol>
+            <h3 className="list-header">Applications List!</h3>
+             <ol className="list">{applicationComponents}</ol>
         </div>
        
     )

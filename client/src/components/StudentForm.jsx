@@ -42,7 +42,7 @@ function StudentForm() {
 
     return (
         <div className="addStudentContainer">
-            <h1 className="formheader">Create a New Topic!</h1>
+            <h2 className="formheader">Add a student!</h2>
             <form className="newStudent" onSubmit={handleSubmit} >
                 <input onChange={updateStudent} value={formData.first_name} className="forminput" type="text" name="first_name" placeholder="First Name"/>
                 <input onChange={updateStudent} value={formData.last_name} className="forminput" type="text" name="last_name" placeholder="Last Name"/>

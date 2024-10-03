@@ -1,7 +1,7 @@
 #root {
-  max-width: 1280px;
+  max-width: 1580px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
@@ -33,10 +33,89 @@
   }
 }
 
-.card {
+/* .card {
   padding: 2em;
-}
+} */
 
 .read-the-docs {
   color: #888;
+}
+
+.card {
+  border-radius: 8px;
+  background: #ffffff80;
+  color: #000000;
+  font-weight: bold;
+  border: black solid 1px;
+  width: 90%;
+  height: auto;
+  margin: 5px;
+  list-style-type: none;
+  cursor: pointer;
+  padding-left: 5px;
+  padding-right: 5px;
+
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.card > a {
+  color: #000000;
+}
+
+.card:hover {
+  transform: translate(25px, 0px)
+}
+
+.header {
+  background: #ffffff90;
+  border-radius: 20px;
+}
+
+.navbar > a{
+  display: inline-block;
+  box-sizing: content-box;
+  width: 150px;
+  padding: 5px;
+  margin: 1%;
+  background: #90909090;
+  text-align: center;
+  font-size: 1.2rem ;
+  color: whitesmoke;
+  border-radius: 20px;
+}
+
+.formheader {
+  background: #ffffff90;
+  border-radius: 20px;
+}
+
+.list-header {
+  background: #ffffff90;
+  border-radius: 20px;
+  width: 88%;
+  margin: 5%;
+}
+
+.schoolDataContainer {
+  border: solid rgba(42, 220, 42, 0.505);
+}
+
+.studentDataContainer {
+  border: solid rgba(45, 42, 220, 0.505);
+}
+
+.userDataContainer {
+  border: solid rgba(220, 42, 42, 0.505);
+
+}
+
+/* Revisit */
+button.selected {
+  background-color: rgba(0, 0, 0, 0.25);
+  color: azure;
+  border: azure solid 1px;
 }

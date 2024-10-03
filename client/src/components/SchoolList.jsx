@@ -13,8 +13,8 @@ function SchoolList() {
     
     return (
         <div>
-            <h3>Schools List!</h3>
-             <ol className="school-list">{schoolComponents}</ol>
+            <h3 className="list-header">Schools List!</h3>
+             <ol className="list">{schoolComponents}</ol>
         </div>
        
     )
