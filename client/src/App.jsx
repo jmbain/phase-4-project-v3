@@ -12,6 +12,7 @@ function App() {
   const [count, setCount] = useState(0)
   const [applications, setApplications] = useState([])
   const [students, setStudents] = useState([])
+  const [schools, setSchools] = useState([])
 
   useEffect(() => {
     fetch("/api/applications", {
@@ -27,36 +28,24 @@ function App() {
     .then(studData => setStudents(studData))
   },[])
 
+  useEffect(() => {
+    fetch("/api/schools", {
+      mode: 'no-cors'})
+    .then(r => r.json())
+    .then(schoolData => setSchools(schoolData))
+  },[])
+
   return (
     <>
-      <div>
+      <div className="appContainer">
         <Header/>
         <NavBar/>
         <Outlet context={{
           applications: applications,
-          students: students
+          students: students,
+          schools: schools,
         }}/>
       </div>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }

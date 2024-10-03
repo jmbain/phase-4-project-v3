@@ -9,6 +9,7 @@ import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import ErrorPage from './components/ErrorPage.jsx'
 import MyApplications from './components/MyApplications.jsx'
 import MyStudents from './components/MyStudents.jsx'
+import MyHome from './components/MyHome.jsx'
 
 const router = createBrowserRouter([
   {
@@ -17,13 +18,33 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage/>,
     children: [
       {
+        path:"/home",
+        element: <MyHome/>
+      },
+      {
         path:"/applications",
         element: <MyApplications/>
       },
       {
         path:"/students",
         element: <MyStudents/>
-      }
+      },
+      // {
+      //   path:"/application/:id",
+      //   element: <ApplicationProfile/>
+      // },
+      // {
+      //   path:"/students/:id",
+      //   element: <StudentProfile/>
+      // },
+      // {
+      //   path:"/school/:id",
+      //   element: <SchoolProfile/>
+      // },
+      // {
+      //   path:"/user/:id",
+      //   element: <UserProfile/>
+      // },
     ]
   }
 ])
