@@ -22,17 +22,17 @@ function ApplicationProfile() {
         return(
             <div className="applicationProfileContainer">
             <div className="schoolDataContainer">
-                <h3>{application.school.school_name}</h3>
-                <h5>{application.school.gov_id}</h5>
-                <h5>{application.school.city}</h5>
+                <h3>School Name: {application.school.school_name}</h3>
+                <h5>School Gov ID: {application.school.gov_id}</h5>
+                <h5>School City: {application.school.city}</h5>
             </div>
             <div className="studentDataContainer">
-                <h3>{application.student.first_name} {application.student.last_name}</h3>
-                <h5>{application.student.age}</h5>
-                <h5>{application.student.expected_grade_level}</h5>
+                <h3>Student Name:{application.student.first_name} {application.student.last_name}</h3>
+                <h5>Student Age: {application.student.age}</h5>
+                <h5>Student Expected Grade Level: {application.student.expected_grade_level}</h5>
             </div>
             <div className="userDataContainer">
-                <h3>{application.user.username} </h3>
+                <h3>Parent Applicant Username: {application.user.username} </h3>
             </div>
         </div>
         )

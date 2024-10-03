@@ -6,7 +6,7 @@ function StudentCard({student}) {
 
     return (
         <li className="studentCard">
-            <Link to={`students/${student.id}`} replace> {student.first_name} {student.last_name} </Link>
+            <Link to={`${student.id}`} replace> {student.first_name} {student.last_name} </Link>
         </li>
     )
 }

@@ -11,6 +11,8 @@ import MyApplications from './components/MyApplications.jsx'
 import MyStudents from './components/MyStudents.jsx'
 import MyHome from './components/MyHome.jsx'
 import ApplicationProfile from './components/ApplicationProfile.jsx'
+import StudentProfile from './components/StudentProfile.jsx'
+import SchoolProfile from './components/SchoolProfile.jsx'
 
 const router = createBrowserRouter([
   {
@@ -34,14 +36,14 @@ const router = createBrowserRouter([
         path:"/applications/:id",
         element: <ApplicationProfile/>
       },
-      // {
-      //   path:"/students/:id",
-      //   element: <StudentProfile/>
-      // },
-      // {
-      //   path:"/school/:id",
-      //   element: <SchoolProfile/>
-      // },
+      {
+        path:"/students/:id",
+        element: <StudentProfile/>
+      },
+      {
+        path:"/home/schools/:id",
+        element: <SchoolProfile/>
+      },
       // {
       //   path:"/user/:id",
       //   element: <UserProfile/>
